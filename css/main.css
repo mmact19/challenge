@@ -969,6 +969,7 @@ button:focus {
   border-radius: 0px;
   background: #554f4d;
   overflow: hidden;
+  margin-right: 20px;
 }
 
 .single-team img {

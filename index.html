@@ -110,18 +110,14 @@
       <div class="section-header">
         <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Challenge Overview</h2>
         <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-        <ul class="section-subsubtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
-          <li>
-            <p>MMAct Challenge 2021 will be hosted in the <a href="http://activity-net.org/challenges/2021/index.html">CVPR'21 International Challenge on Activity Recognition (ActivityNet) Workshop.</a>
-              This challenge asks participants to propose cross-modal video action recognition/localization approaches for addressing shortcomings in visual only approaches by using <a href="https://mmact19.github.io/2019/">MMAct Dataset</a>.
-              The goal of this task is to leverage both sensor-based, e.g. body-worn sensors, and vision-based modalities in ways that can overcome the limitations imposed by modality discrepancy between
-              train (sensor + video) and test (only video) phase. Modalities used for this challenge are: <b>Acceleration, Orientation, Gyroscope, RGB video and Keypoints.</b>
-              This challenge promotes an alternate point of view on how to address vision challenges
-              through the use of cross-modal way in the hopes of expanding research on video action understanding to further leverage the sensors commonly embedded in
-              daily-use smart devices (e.g., smartphones) as a new trial.</p>
-          </li>
-        </ul>
       </div>
+      <p>MMAct Challenge 2021 will be hosted in the <a href="http://activity-net.org/challenges/2021/index.html">CVPR'21 International Challenge on Activity Recognition (ActivityNet) Workshop.</a>
+        This challenge asks participants to propose cross-modal video action recognition/localization approaches for addressing shortcomings in visual only approaches by using <a href="https://mmact19.github.io/2019/">MMAct Dataset</a>.
+        The goal of this task is to leverage both sensor-based, e.g. body-worn sensors, and vision-based modalities in ways that can overcome the limitations imposed by modality discrepancy between
+        train (sensor + video) and test (only video) phase. Modalities used for this challenge are: <b>Acceleration, Orientation, Gyroscope, RGB video and Keypoints.</b>
+        This challenge promotes an alternate point of view on how to address vision challenges
+        through the use of cross-modal way in the hopes of expanding research on video action understanding to further leverage the sensors commonly embedded in
+        daily-use smart devices (e.g., smartphones) as a new trial.</p>
     </div>
   </section>
   <!-- News Section End -->
@@ -228,11 +224,11 @@
       </div>
       <div class="row">
         <div>
-          <h5 style="text-align:left">In this task, participants will use trimmmed clips from MMAct with paried sensor data for using.
+          <p style="text-align:left">In this task, participants will use trimmmed clips from MMAct with paried sensor data for using.
             The task allows the participants to train with trimmed sensor data and trimmed video, but test on only trimmed video for action recognition.
             External datasets for pre-training are allowed, but it needs to be clearly documented.
             Vision ONLY methods are also welcome, thus sensor data is NOT the must use but recommended to be utilized.
-          </h5>
+          </p>
         </div>
         <div>
           <h5><b>MMAct trimmed cross-view dataset:</b></h5>
@@ -271,10 +267,10 @@
         <hr class="lines">
       </div>
       <div class="row">
-        <h5 style="text-align:left">In this task, participants will use untrimmed paired sensor data and video for training,
+        <p style="text-align:left">In this task, participants will use untrimmed paired sensor data and video for training,
           test on only untrimmed videos for temporal action localization with the output being the recognized action class and its start and end time in the untrimmed video.
           External datasets for pre-training are allowed, but it needs to be clearly documented. Vision ONLY methods are also welcome, thus sensor data is NOT the must use but recommaned to be utilized.
-        </h5>
+        </p>
       </div>
       <div>
         <h5><b>MMAct untrimmed cross-session dataset:</b></h5>
@@ -308,53 +304,45 @@
       <div class="row">
         <div class="col-md-12">
           <h3>Dataset</h3>
-          <h5><i>For the challenge dataset, please follow this <a href="https://docs.google.com/forms/d/e/1FAIpQLScM3OTHIil2b39MZHkORTSHcRpWC6qXcvFnfGivNgb4ZpoRzA/viewform?fbzx=3303059761544452846">link</a> for download.
-          </h5></i>
+          <h5>For the challenge dataset, please follow this <a href="https://docs.google.com/forms/d/e/1FAIpQLScM3OTHIil2b39MZHkORTSHcRpWC6qXcvFnfGivNgb4ZpoRzA/viewform?fbzx=3303059761544452846">link</a> for download.
+          </h5>
+
+          <br>
+          
+          <h3>Preparation</h3>
+          <h5>You can use the dev-kit in <a href="https://github.com/mmact19/challenge">this page</a> for preparing.
+          </h5>
           <!-- <aside>
           Note: entire dataset will open soon.
         </aside> -->
 
-          <h3>Terms of Use</h3>
-          <p>
-            1) The usage of this dataset is limited to the academic research ONLY, any direct or indirect commercial use is NOT allowed. <br>
-          <p>
-            2) The disclosure of this dataset in your research is only allowed for the demonstration in academic publications and presentations. And the original property holder‘s name of this dataset is necessary to be indicated in your publications
-            or presentations. <br>
-          <p>
-            3) Any distribution of this dataset is prohibited, if it is original, modified or combinated with other dataset. Any commercial usage of this dataset is prohibited, if as it is, or if it is assembled with any models or programs. <br>
-          <p>
-            4) Hitachi, Ltd. does not bear any responsibility with respect to, any losses, expenses, and damages caused by user of this dataset. All users agree to indemnify, defend and hold harmless, the data collection participants, Hitachi, Ltd.
-            and it’s officers, employees, and agents, individually and collectively. <br>
-          <p>
-            5) Any way out of use of the above terms, will be canceled the usage license and should permanently remove the contents related with this dataset. <br>
+          <br>
+
+          <div class="section-header">
+            <h2 class="section-title">Evaluation Metrics</h2>
+            <hr class="lines">
+          </div>
+          <p><b>Task 1. Cross-Modal Trimmed Action Recognition:</b>
+            The evaluation will be done across <i>MMAct trimmed cross-view dataset and cross-scene dataset</i>.
+            We will use the mean Average Precision (mAP) for Top-1 as our metrics, and the winner of this challenge will be selected based on the average of this metric across the above two datasets.
           </p>
+          <p><b>Task 2. Cross-Modal Untrimmed Action Detection:</b>
+            We will use the Interpolated Average Precision (AP) as our evaluation metric, which is also used by <a href="http://activitynet.org/challenges/2020/tasks/anet_localization.html">ActivityNet</a>.
+            The winner will be selected based on this metric evaluated on <i>MMAct untrimmed cross-session dataset</i>.
+          </p>
+
+          <br>
+
+          <div class="section-header">
+            <h2 class="section-title">Submission</h2>
+            <hr class="lines">
+          </div>
+
+          <p>For task1 submission format is provided here: <a href="TBA">coming soon..</a>.</p>
+          <p>For task2 submission format is provided here: <a href="TBA">coming soon..</a>.</p>
         </div>
       </div>
-
-      <br>
-
-      <div class="section-header">
-        <h2 class="section-title">Evaluation Metrics</h2>
-        <hr class="lines">
-      </div>
-      <h5><b>Task 1. Cross-Modal Trimmed Action Recognition:</b>
-        The evaluation will be done across <i>MMAct trimmed cross-view dataset and cross-scene dataset</i>.
-        We will use the mean Average Precision (mAP) for Top-1 as our metrics, and the winner of this challenge will be selected based on the average of this metric across the above two datasets.
-      </h5>
-      <h5><b>Task 2. Cross-Modal Untrimmed Action Detection:</b>
-        We will use the Interpolated Average Precision (AP) as our evaluation metric, which is also used by <a href="http://activitynet.org/challenges/2020/tasks/anet_localization.html">ActivityNet</a>.
-        The winner will be selected based on this metric evaluated on <i>MMAct untrimmed cross-session dataset</i>.
-      </h5>
-
-      <br>
-
-      <div class="section-header">
-        <h2 class="section-title">Submission</h2>
-        <hr class="lines">
-      </div>
-      <h5>For task1 submission format is provided here: <a href="TBA">coming soon..</a>.<br>
-      <h5>For task2 submission format is provided here: <a href="TBA">coming soon..</a>.
-
+    </div>
   </section>
   <!-- Downloads Section End -->
 
@@ -363,7 +351,118 @@
       <div class="section-header">
         <h2 class="section-title">Teams</h2>
         <hr class="lines">
+        <!-- <p class="section-subtitle">Organizer</p>
       </div>
+      <div class="row">
+        <div class="col-lg-2 col-md-4 col-xs-6">
+          <div class="single-team" align="center">
+            <a href="https://fusionk.github.io/quankong/"><img src="img/team/sample.png" alt=""></a>
+            <div class="team-details">
+              <div class="team-inner">
+                <h4 class="team-title">Quan<br> Kong</h4>
+                <p>Hitachi, Ltd.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-xs-8">
+          <div class="single-team" align="center">
+            <img src="img/team/sample.png" alt="">
+            <div class="team-details">
+              <div class="team-inner">
+                <h4 class="team-title">Katsuyuki Nakamura</h4>
+                <p>Hitachi, Ltd.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-xs-8">
+          <div class="single-team">
+            <img src="img/team/sample.png" alt="">
+            <div class="team-details">
+              <div class="team-inner">
+                <h4 class="team-title">Kataoka Hirokatsu</h4>
+                <p>AIST</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-xs-8">
+          <div class="single-team">
+            <img class="img-fulid" src="img/team/sample.png" alt="">
+            <div class="team-details">
+              <div class="team-inner">
+                <h4 class="team-title">Shin'ichi Satoh</h4>
+                <p>NII</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-xs-8">
+          <div class="single-team">
+            <img class="img-fulid" src="img/team/sample.png" alt="">
+            <div class="team-details">
+              <div class="team-inner">
+                <h4 class="team-title">Takuya Maekawa</h4>
+                <p>Osaka Univ.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <div class="section-header">
+        <hr class="lines">
+        <p class="section-subtitle">Committee Member</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-2 col-md-4 col-xs-6">
+          <div class="single-team">
+            <a href="https://fusionk.github.io/quankong/"><img src="img/team/sample.png" alt=""></a>
+            <div class="team-details">
+              <div class="team-inner">
+                <h4 class="team-title">Joseph Korpela</h4>
+                <p>Hitachi, Ltd.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-xs-8">
+          <div class="single-team">
+            <img src="img/team/sample.png" alt="">
+            <div class="team-details">
+              <div class="team-inner">
+                <h4 class="team-title">Kensho Hara</h4>
+                <p>AIST</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-xs-8">
+          <div class="single-team">
+            <img src="img/team/sample.png" alt="">
+            <div class="team-details">
+              <div class="team-inner">
+                <h4 class="team-title">Yoshiki <br>Ito</h4>
+                <p>Hitachi, Ltd.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-xs-8">
+          <div class="single-team">
+            <img class="img-fulid" src="img/team/sample.png" alt="">
+            <div class="team-details">
+              <div class="team-inner">
+                <h4 class="team-title">Saptarshi Sinha</h4>
+                <p>Hitachi, Ltd.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
   </section>
 
   <!-- Footer Section Start -->
