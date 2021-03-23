@@ -1,2 +1,2 @@
-# challenge
+# MMAct Challenge
 MMAct Challenge
