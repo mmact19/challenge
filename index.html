@@ -93,7 +93,7 @@
       <div class="row justify-content-md-center">
         <div class="col-md-10">
           <div class="contents text-center">
-            <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">MMAct Challenge @ CVPR2021</h1>
+            <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">MMAct Challenge in conjunction with ActivityNet @ CVPR2021</h1>
             <h2 class="lead wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">
               </p>
               <a href="#downloads" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Dataset Download</a>
@@ -105,19 +105,48 @@
   <!-- Header Section End -->
 
   <!-- News Section Start -->
+  <section id="date" class="section" style="background:#f6f5f5;">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Important Dates</h2>
+        <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+        <ul class="section-subsubtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
+          <li>
+            <p>-2021.04.05. Challenge open!</p>
+          </li>
+          <li>
+            <p>-2021.04/End. Evaluation server open, test data released.</p>
+          </li>
+          <li>
+            <p>-2021.06/Early. Evaluation server close.</p>
+          </li>
+          <li>
+            <p>-2021.06/(TBD). Deadline for submitting the report.</p>
+          </li>
+          <li>
+            <p>-2021.06/(TBD). Workshop day at CVPR 2021.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section Start -->
   <section id="overview" class="section">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Challenge Overview</h2>
         <hr class="lines wow zoomIn" data-wow-delay="0.3s">
       </div>
-      <p>MMAct Challenge 2021 will be hosted in the <a href="http://activity-net.org/challenges/2021/index.html">CVPR'21 International Challenge on Activity Recognition (ActivityNet) Workshop.</a>
-        This challenge asks participants to propose cross-modal video action recognition/localization approaches for addressing shortcomings in visual only approaches by using <a href="https://mmact19.github.io/2019/">MMAct Dataset</a>.
+      <p>The MMAct Challenge 2021 will be hosted in the <a href="http://activity-net.org/challenges/2021/index.html">CVPR'21 International Challenge on Activity Recognition (ActivityNet) Workshop.</a>
+        This challenge asks participants to propose cross-modal video action recognition/localization approaches for addressing shortcomings in visual only approaches using <a href="https://mmact19.github.io/2019/">MMAct Dataset</a>.
         The goal of this task is to leverage both sensor-based, e.g. body-worn sensors, and vision-based modalities in ways that can overcome the limitations imposed by modality discrepancy between
-        train (sensor + video) and test (only video) phase. Modalities used for this challenge are: <b>Acceleration, Orientation, Gyroscope, RGB video and Keypoints.</b>
+        train (sensor + video) and test (only video, including keypoints) phases. The modalities used for this challenge are: <b>Acceleration, Orientation, Gyroscope, RGB video, and Keypoints.</b>
         This challenge promotes an alternate point of view on how to address vision challenges
-        through the use of cross-modal way in the hopes of expanding research on video action understanding to further leverage the sensors commonly embedded in
-        daily-use smart devices (e.g., smartphones) as a new trial.</p>
+        through using cross-modal methods in the hopes of expanding research on video action understanding to further leverage the sensors commonly embedded in
+        daily-use smart devices (e.g., smartphones).<br><br>
+        <b>Winners will be announced at ActivityNet Workshop at CVPR 2021, along with Prizes sponsored by <a href="https://www.hitachi.com/rd/">Hitachi, Ltd.</a> and subject to changes.</b>
+      </p>
     </div>
   </section>
   <!-- News Section End -->
@@ -126,7 +155,7 @@
   <section id="features" class="section" data-stellar-background-ratio="0.2">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">MMAct Features</h2>
+        <h2 class="section-title">MMAct Challenge Dataset Features</h2>
         <hr class="lines">
         <p class="section-subtitle">A large-scale multi modal dataset for action understanding</p>
       </div>
@@ -139,8 +168,8 @@
                   <i class="lnr lnr-database"></i>
                 </span>
                 <div class="text">
-                  <h4>7 modalities</h4>
-                  <p>RGB, Keypoints, Acceleration, Gyroscope, Orientation, Wi-Fi, Pressure.</p>
+                  <h4>5 modalities</h4>
+                  <p>RGB, Keypoints, Acceleration, Gyroscope, Orientation.</p>
                 </div>
               </div>
               <div class="col-lg-3 col-sm-3 col-xs-12 box-item">
@@ -148,7 +177,7 @@
                   <i class="lnr lnr-camera-video"></i>
                 </span>
                 <div class="text">
-                  <h4>1900+ Videos</h4>
+                  <h4>1600+ Videos</h4>
                   <p>Untrimmed videos with 1920x1080@30FPS</p>
                 </div>
               </div>
@@ -157,8 +186,8 @@
                   <i class="lnr lnr-film-play"></i>
                 </span>
                 <div class="text">
-                  <h4>36k Instances</h4>
-                  <p>Average length ranges from 3-8 seconds.</p>
+                  <h4>32k Clips</h4>
+                  <p>Average clip length ranges from 3-8 seconds.</p>
                 </div>
               </div>
               <div class="col-lg-3 col-sm-3 col-xs-12 box-item">
@@ -166,7 +195,7 @@
                   <i class="lnr lnr-layers"></i>
                 </span>
                 <div class="text">
-                  <h4>37 Classes</h4>
+                  <h4>35 Classes</h4>
                   <p>Daily, Abnormal, Desk work actions</p>
                 </div>
               </div>
@@ -184,8 +213,8 @@
                   <i class="lnr lnr-camera"></i>
                 </span>
                 <div class="text">
-                  <h4>4 + 1 Views</h4>
-                  <p>4 survillence views + 1 egocentric view</p>
+                  <h4>4 Views</h4>
+                  <p>4 survillence camera views</p>
                 </div>
               </div>
               <div class="col-lg-3 col-sm-3 col-xs-12 box-item">
@@ -224,9 +253,9 @@
       </div>
       <div class="row">
         <div>
-          <p style="text-align:left">In this task, participants will use trimmmed clips from MMAct with paried sensor data for using.
-            The task allows the participants to train with trimmed sensor data and trimmed video, but test on only trimmed video for action recognition.
-            External datasets for pre-training are allowed with clearly clarifying in the report.
+          <p style="text-align:left">In this task, participants will use trimmmed videos from MMAct along with paried sensor data.
+            This task allows the participants to train with trimmed sensor data and trimmed video, but test on only trimmed video for action recognition.
+            External datasets for pre-training are allowed as long as clearly stated in the report.
             Vision ONLY methods are also welcome, but there will be a special award selected from the participants who use cross-modal methods.
           </p>
         </div>
@@ -234,10 +263,10 @@
           <h5><b>MMAct trimmed cross-view dataset:</b></h5>
           <ul class="section-subsubtitle">
             <li>
-              <p>・~18k clips from 2 views for training, ~18k clips from the other 2 views for testing.</p>
+              <p>・clips from multiple views for training and validation, clips from unseen views for testing.</p>
             </li>
             <li>
-              <p>・37 action classes under 20 subjects with four scenes.</p>
+              <p>・35 action classes from 20 subjects with four scenes.</p>
             </li>
             <li>
               <p>・<i>MMAct untrimmed dataset and MMAct trimmed cross-scene dataset are NOT permitted in this task.</i></p>
@@ -248,10 +277,10 @@
           <h5><b>MMAct trimmed cross-scene dataset:</b></h5>
           <ul class="section-subsubtitle">
             <li>
-              <p>・~24k clips from 3 scenes (Free space, Desk, Entrance) for training, ~12k clips from 2 scenes (Occlusion, Desk) for testing.</p>
+              <p>・clips from 3 scenes (Free space, Desk, Entrance) for training and validation, clips from 3 scenes (Occlusion, Desk, Entrance) for testing.</p>
             </li>
             <li>
-              <p>・37 action classes under 20 subjects with four camera views.</p>
+              <p>・35 action classes from 20 subjects with four camera views.</p>
             </li>
             <li>
               <p>・<i>MMAct untrimmed dataset and MMAct trimmed cross-view dataset are NOT permitted in this task.</i></p>
@@ -268,18 +297,19 @@
       </div>
       <div class="row">
         <p style="text-align:left">In this task, participants will use untrimmed paired sensor data and video for training,
-          test on only untrimmed videos for temporal action localization with the output being the recognized action class and its start and end time in the untrimmed video.
-          External datasets for pre-training are allowed with clearly clarifying in the report. Vision ONLY methods are also welcome, but there will be a special award selected from the participants who use cross-modal methods.
+          then test on only untrimmed videos for temporal action localization with the output being the recognized action class and its start and end time in the untrimmed video.
+          External datasets for pre-training are allowed as long as clearly stated in the report. Vision ONLY methods are also welcome, but there will be a special award selected from the participants who use cross-modal methods.
+          <i>Notice that Keypoints are NOT provided in this task.</i>
         </p>
       </div>
       <div>
         <h5><b>MMAct untrimmed cross-session dataset:</b></h5>
         <ul class="section-subsubtitle">
           <li>
-            <p>・~11K untrimmed videos for training, ~8k untrimmed videos for testing.</p>
+            <p>・~9k untrimmed videos for training and validation, and the other untrimmed videos for testing.</p>
           </li>
           <li>
-            <p>・37 action classes under 20 subjects with four camera views and four scenes.</p>
+            <p>・35 action classes from 20 subjects with four camera views and four scenes.</p>
           </li>
           <li>
             <p>・<i>MMAct trimmed cross-view dataset and cross-scene dataset are NOT permitted in this task.</i></p>
@@ -304,13 +334,13 @@
       <div class="row">
         <div class="col-md-12">
           <h3>Dataset</h3>
-          <h5>For the challenge dataset, please follow this <a href="https://docs.google.com/forms/d/e/1FAIpQLScM3OTHIil2b39MZHkORTSHcRpWC6qXcvFnfGivNgb4ZpoRzA/viewform?fbzx=3303059761544452846">link</a> for download.
+          <h5>Please follow this <a href="https://docs.google.com/forms/d/e/1FAIpQLSdg-6E1ogV5VNA9GxhpAG8ehlBWtEH-UTgPPxYWe6d9fLdfqw/viewform">link</a> to download the challenge dataset.
           </h5>
 
           <br>
 
           <h3>Preparation</h3>
-          <h5>You can use the dev-kit in <a href="https://github.com/mmact19/challenge">this page</a> for preparing.
+          <h5>You can use the dev-kit from <a href="https://github.com/mmact19/challenge">this page</a> when preparing your entry.
           </h5>
           <!-- <aside>
           Note: entire dataset will open soon.
@@ -323,8 +353,8 @@
             <hr class="lines">
           </div>
           <p><b>Task 1. Cross-Modal Trimmed Action Recognition:</b>
-            The evaluation will be done across <i>MMAct trimmed cross-view dataset and cross-scene dataset</i>.
-            We will use the mean Average Precision (mAP) for Top-1 as our metrics, and the winner of this challenge will be selected based on the average of this metric across the above two datasets.
+            The evaluation will be done across <i>MMAct trimmed cross-view dataset</i> and <i>MMAct trimmed cross-scene dataset</i>.
+            We will use the mean Average Precision (mAP) for Top-1 as our metric, and the winner of this challenge will be selected based on the average of this metric across the above two datasets.
           </p>
           <p><b>Task 2. Cross-Modal Untrimmed Action Detection:</b>
             We will use the Interpolated Average Precision (AP) as our evaluation metric, which is also used by <a href="http://activitynet.org/challenges/2020/tasks/anet_localization.html">ActivityNet</a>.
@@ -338,8 +368,8 @@
             <hr class="lines">
           </div>
 
-          <p>For task1 submission format is provided here: <a href="TBA">coming soon..</a>.</p>
-          <p>For task2 submission format is provided here: <a href="TBA">coming soon..</a>.</p>
+          <p>For task1 submission format is provided here: <a href="#">coming soon..</a>.</p>
+          <p>For task2 submission format is provided here: <a href="#">coming soon..</a>.</p>
         </div>
       </div>
     </div>
@@ -356,7 +386,7 @@
       <div class="row">
         <div class="col-lg-2 col-md-4 col-xs-6">
           <div class="single-team" align="center">
-            <a href="https://fusionk.github.io/quankong/"><img src="img/team/sample.png" alt=""></a>
+            <a href="https://fusionk.github.io/quankong/"><img src="img/team/quankong.png" alt=""></a>
             <div class="team-details">
               <div class="team-inner">
                 <h4 class="team-title">Quan<br> Kong</h4>
@@ -367,7 +397,7 @@
         </div>
         <div class="col-lg-2 col-md-4 col-xs-8">
           <div class="single-team" align="center">
-            <a href=""><img src="img/team/sample.png" alt=""></a>
+            <a href="https://scholar.google.co.jp/citations?hl=en&user=ZIxQ5zAAAAAJ"><img src="img/team/nakamura.png" alt=""></a>
             <div class="team-details">
               <div class="team-inner">
                 <h4 class="team-title">Katsuyuki Nakamura</h4>
@@ -378,7 +408,7 @@
         </div>
         <div class="col-lg-2 col-md-4 col-xs-8">
           <div class="single-team">
-            <a href="http://hirokatsukataoka.net"><img src="img/team/sample.png" alt=""></a>
+            <a href="http://hirokatsukataoka.net"><img src="img/team/hirokatsu_min.png" alt=""></a>
             <div class="team-details">
               <div class="team-inner">
                 <h4 class="team-title">Hirokatsu Kataoka</h4>
@@ -389,7 +419,7 @@
         </div>
         <div class="col-lg-2 col-md-4 col-xs-8">
           <div class="single-team">
-            <img class="img-fulid" src="img/team/sample.png" alt="">
+            <a href="http://www.satoh-lab.nii.ac.jp/"><img src="img/team/satoshinichi.jpg" alt=""></a>
             <div class="team-details">
               <div class="team-inner">
                 <h4 class="team-title">Shin'ichi Satoh</h4>
@@ -400,7 +430,7 @@
         </div>
         <div class="col-lg-2 col-md-4 col-xs-8">
           <div class="single-team">
-            <img class="img-fulid" src="img/team/sample.png" alt="">
+            <a href="http://www-nishio.ist.osaka-u.ac.jp/~maekawa/index-e.html"><img src="img/team/maekawa-face-2018.png" alt=""></a>
             <div class="team-details">
               <div class="team-inner">
                 <h4 class="team-title">Takuya Maekawa</h4>
@@ -419,7 +449,7 @@
       <div class="row">
         <div class="col-lg-2 col-md-4 col-xs-6">
           <div class="single-team">
-            <a href="https://fusionk.github.io/quankong/"><img src="img/team/sample.png" alt=""></a>
+            <a href="mailto:joseph.korpela.kp@hitachi.com"><img src="img/team/Korpela.png" alt=""></a>
             <div class="team-details">
               <div class="team-inner">
                 <h4 class="team-title">Joseph Korpela</h4>
@@ -430,7 +460,7 @@
         </div>
         <div class="col-lg-2 col-md-4 col-xs-8">
           <div class="single-team">
-            <img src="img/team/sample.png" alt="">
+            <a href="https://kenshohara.github.io"><img src="img/team/kenshohara.png" alt=""></a>
             <div class="team-details">
               <div class="team-inner">
                 <h4 class="team-title">Kensho Hara</h4>
@@ -441,7 +471,7 @@
         </div>
         <div class="col-lg-2 col-md-4 col-xs-8">
           <div class="single-team">
-            <img src="img/team/sample.png" alt="">
+            <a href="mailto:yoshiki.ito.xf@hitachi.com"><img src="img/team/ito.jpeg" alt=""></a>
             <div class="team-details">
               <div class="team-inner">
                 <h4 class="team-title">Yoshiki <br>Ito</h4>
@@ -452,7 +482,7 @@
         </div>
         <div class="col-lg-2 col-md-4 col-xs-8">
           <div class="single-team">
-            <img class="img-fulid" src="img/team/sample.png" alt="">
+            <a href="mailto:saptarshi.sinha.hx@hitachi.com"><img src="img/team/sinha.jpeg" alt=""></a>
             <div class="team-details">
               <div class="team-inner">
                 <h4 class="team-title">Saptarshi Sinha</h4>
@@ -460,6 +490,33 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Reference" class="section" style="background:#f6f5f5;">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Reference</h2>
+        <hr class="lines">
+        <p class="section-subtitle">Please cite the following paper if you use the dataset.</p>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Publications</h3>
+          <a href="http://openaccess.thecvf.com/content_ICCV_2019/papers/Kong_MMAct_A_Large-Scale_Dataset_for_Cross_Modal_Human_Action_Understanding_ICCV_2019_paper.pdf"><img src="img/mmactpaper.png" width="100%" alt="" /></a>
+          <p></p>
+          <h4>Bibtex</h4>
+          <pre style="font-size:15px;">
+        @InProceedings{Kong_2019_ICCV,
+          author = {Kong, Quan and Wu, Ziming and Deng, Ziwei and Klinkigt, Martin and Tong, Bin and Murakami, Tomokazu},
+          title = {MMAct: A Large-Scale Dataset for Cross Modal Human Action Understanding},
+          booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
+          month = {October},
+          year = {2019}
+        }
+        </pre>
         </div>
       </div>
     </div>
@@ -476,7 +533,7 @@
               <a href="#">Homepage</a>
             </li>
             <li>
-              <a href="#news">News</a>
+              <a href="#news">Overview</a>
             </li>
             <li>
               <a href="#features">Features</a>
