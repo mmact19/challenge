@@ -64,7 +64,19 @@ python utils/pose_frame_extraction.py
 ```
 
 ### Toolkit for sensor processing
-For the entry of sensor data processing, we provide a complete example to show the way of creating time-series sliding window data, dealing with datetime merging across different type of sensor with sampling rate if an early fusion needed, and use the pre-processed data for training/testing a time-series classifier. When `MMAct trimmed cross-scene dataset` and `MMAct untrimmed cross-session dataset` prepared over, to run the classifier training and testing example as:
+For the entry of sensor data processing, we provide a complete example to show the way of creating time-series sliding window data, dealing with datetime merging across different type of sensor with sampling rate if an early fusion needed, and use the pre-processed data for training/testing a time-series classifier. When `MMAct trimmed cross-scene dataset` and `MMAct untrimmed cross-session dataset` prepared over, to run the classifier ([InceptionTime](https://github.com/hfawaz/InceptionTime)) training and testing example as:
 ```
 python utils/time_series_classifiers.py
+```
+
+### Reference
+Please cite the following paper if you use the code or dataset.
+```
+@InProceedings{Kong_2019_ICCV,
+          author = {Kong, Quan and Wu, Ziming and Deng, Ziwei and Klinkigt, Martin and Tong, Bin and Murakami, Tomokazu},
+          title = {MMAct: A Large-Scale Dataset for Cross Modal Human Action Understanding},
+          booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
+          month = {October},
+          year = {2019}
+        }
 ```
