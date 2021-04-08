@@ -17,13 +17,13 @@ def create_windowed_data(df, sensor_cols, window_size, step_size, variables_firs
     step_size - number of rows to step forward before creating the next window
     variables_first - If True, return windows as a 3D array with shape (# samples, # variables, window_size)
                       If False, return windows as a 3D array with shape (# samples, window_size, # variables)
-    all_windows - If False then only return windows (and labels and intervals) for labeled intervals (i.e., determined by
-                      label_list or constant_label). If True, then you will also get windows with a corresponding
+    all_windows - If False then only return windows (and labels and intervals) for labeled intervals (i.e., determined by 
+                      label_list or constant_label). If True, then you will also get windows with a corresponding 
                       label of "" for unlabeled data and data that overlapped label boundaries
-    label_list - List of format [[StartTimestamp, EndTimestamp, LabelString, Subject], ] that will be used to assign labels
-                      to windows (e.g., used when loading from a file that has multiple intervals of activities with
+    label_list - List of format [[StartTimestamp, EndTimestamp, LabelString, Subject], ] that will be used to assign labels 
+                      to windows (e.g., used when loading from a file that has multiple intervals of activities with 
                       different classes)
-    constant_label - A single label string that should be applied to all windows (e.g., used when loading from a file
+    constant_label - A single label string that should be applied to all windows (e.g., used when loading from a file 
                       that only contains a single class)
     """
     assert step_size <= window_size
@@ -34,7 +34,7 @@ def create_windowed_data(df, sensor_cols, window_size, step_size, variables_firs
     windowed_data = []
     intervals = []
     labels = []
-    subjects = []
+    subjects = [] 
 
     current_window = []
     current_interval = []
@@ -121,7 +121,7 @@ def datetime_merging(primary_df, secondary_df_list):
 
     for df2 in secondary_df_list:
         combined_df = combined_df.join(df2, how="left")
-
+    
     combined_df.fillna(method='bfill', inplace=True)
     combined_df.dropna(inplace=True)
     return combined_df
@@ -200,7 +200,7 @@ def load_csv_file_list(csv_file_path_list, cols, prefix=None, sample_rate=None):
         if prefix is not None:
             rename_cols = {c: prefix + "_" + c for c in cols if c != "time"}
             df.rename(columns=rename_cols, inplace=True)
-
+        
         if "." not in df.at[0, "time"]:
             df.at[0, "time"] = df.at[0, "time"] + ".000"
 
@@ -233,10 +233,10 @@ def load_csv_file_list(csv_file_path_list, cols, prefix=None, sample_rate=None):
         combined_df = combined_df[~combined_df.index.duplicated(keep='last')]
         return combined_df
 
-def trimmed_data_example(trimmed_dir, use_sensors, scene_or_subject):
-    print("trimmed cross " + scene_or_subject + " example")
+def trimmed_data_example(trimmed_dir, use_sensors):
+    print("trimmed cross scene example")
 
-    trimmed_dir = os.path.join(trimmed_dir, "sensor")
+    trimmed_dir = os.path.join(trimmed_dir, "sensors")
 
     sensor_dir_list = ["acc_phone_clip", "acc_watch_clip", "gyro_clip", "orientation_clip",]
     subject_list = ["subject" + str(i) for i in range(1, 21)]
@@ -258,19 +258,18 @@ def trimmed_data_example(trimmed_dir, use_sensors, scene_or_subject):
                                 c_lower = c.lower()
                                 if c_lower not in filename_case_map:
                                     filename_case_map[c_lower] = [c_lower]
-                                if c not in filename_case_map[c_lower]:
+                                if c not in filename_case_map[c_lower]:              
                                     filename_case_map[c_lower].append(c)
                                 class_list.add(c_lower)
     class_list = list(class_list)
     class_list.sort()
 
-    if scene_or_subject == "scene":
-        train_scene_list = ["scene1", "scene3"] #training scene from the challenge dataset
-        test_scene_list = ["scene4"] #val scene from the challenge dataset
-        for s in test_scene_list:
-            assert s not in train_scene_list
-        for s in train_scene_list:
-            assert s not in test_scene_list
+    train_scene_list = ["scene1", "scene2","scene3"] #training scene from the challenge
+    test_scene_list = ["scene4"] #val scene from the challenge
+    for s in test_scene_list:
+        assert s not in train_scene_list
+    for s in train_scene_list:
+        assert s not in test_scene_list
 
     train_X = []
     train_y = []
@@ -287,9 +286,9 @@ def trimmed_data_example(trimmed_dir, use_sensors, scene_or_subject):
                     acc_w_df = None
                     acc_s_df = None
                     gyro_df = None
-                    orientation_df = None
+                    orientation_df = None                
 
-                    if "acc_phone" in use_sensors:
+                    if "acc_phone" in use_sensors: 
                         for label_ in filename_case_map[label]:
                             acc_s_path = os.path.join(trimmed_dir, "acc_phone_clip", subject, scene, session, label_ + ".csv")
                             if os.path.exists(acc_s_path):
@@ -299,7 +298,7 @@ def trimmed_data_example(trimmed_dir, use_sensors, scene_or_subject):
                         else:
                             acc_s_df = acc_s_df / 9.8 #converting values from m/s^2 to g's
 
-                    if "acc_watch" in use_sensors:
+                    if "acc_watch" in use_sensors: 
                         for label_ in filename_case_map[label]:
                             acc_w_path = os.path.join(trimmed_dir, "acc_watch_clip", subject, scene, session, label_ + ".csv")
                             if os.path.exists(acc_w_path):
@@ -309,7 +308,7 @@ def trimmed_data_example(trimmed_dir, use_sensors, scene_or_subject):
                         else:
                             acc_w_df = acc_w_df / 9.8 #converting values from m/s^2 to g's
 
-                    if "gyro" in use_sensors:
+                    if "gyro" in use_sensors: 
                         for label_ in filename_case_map[label]:
                             gyro_path = os.path.join(trimmed_dir, "gyro_clip", subject, scene, session, label_ + ".csv")
                             if os.path.exists(gyro_path):
@@ -317,7 +316,7 @@ def trimmed_data_example(trimmed_dir, use_sensors, scene_or_subject):
                         if gyro_df is None:
                             continue
 
-                    if "orientation" in use_sensors:
+                    if "orientation" in use_sensors: 
                         for label_ in filename_case_map[label]:
                             orientation_path = os.path.join(trimmed_dir, "orientation_clip", subject, scene, session, label_ + ".csv")
                             if os.path.exists(orientation_path):
@@ -358,27 +357,15 @@ def trimmed_data_example(trimmed_dir, use_sensors, scene_or_subject):
 
                     X, y, intervals, _ = create_windowed_data(df=combined_df, sensor_cols=sensor_cols, window_size=window_size, step_size=step_size, variables_first=variables_first, all_windows=all_windows, label_list=None, constant_label=label.lower())
 
-                    if scene_or_subject == "subject":
-                        if subject in train_subject_list:
-                            train_X.extend(X)
-                            train_y.extend(y)
-                            train_intervals.extend(intervals)
+                    if scene in train_scene_list:
+                        train_X.extend(X)
+                        train_y.extend(y)
+                        train_intervals.extend(intervals)
 
-                        elif subject in test_subject_list:
-                            test_X.extend(X)
-                            test_y.extend(y)
-                            test_intervals.extend(intervals)
-
-                    elif scene_or_subject == "scene":
-                        if scene in train_scene_list:
-                            train_X.extend(X)
-                            train_y.extend(y)
-                            train_intervals.extend(intervals)
-
-                        elif scene in test_scene_list:
-                            test_X.extend(X)
-                            test_y.extend(y)
-                            test_intervals.extend(intervals)
+                    elif scene in test_scene_list:
+                        test_X.extend(X)
+                        test_y.extend(y)
+                        test_intervals.extend(intervals)
 
     train_val_split = int(0.9*len(train_X))
     temp_train_X = train_X[:train_val_split]
@@ -441,14 +428,14 @@ def trimmed_data_example(trimmed_dir, use_sensors, scene_or_subject):
     f1 = f1_score(test_y_ints, test_pred_ints, average="macro")
     print(f'macro f-measure: {f1:10.6f}')
 
-    title_text = 'Trimmed cross ' + scene_or_subject + ' example, macro f-measure: ' + str(round(f1, 3))
-    create_confusion_matrix(gt_ints=test_y_ints, pred_ints=test_pred_ints, class_list=vocab, filename="trimmed_cross_" + scene_or_subject + "_example_cm.svg", title_text=title_text, debug_mode=True)
+    title_text = 'Trimmed cross scene example, macro f-measure: ' + str(round(f1, 3))
+    create_confusion_matrix(gt_ints=test_y_ints, pred_ints=test_pred_ints, class_list=vocab, filename="trimmed_cross_scene_example_cm.svg", title_text=title_text, debug_mode=True)
 
-def untrimmed_data_example(untrimmed_dir, use_sensors, session_or_subject):
-    print("untrimmed cross " + session_or_subject + " example")
+def untrimmed_data_example(untrimmed_dir, use_sensors):
+    print("untrimmed cross session example")
 
     subject_list = ["subject" + str(i) for i in range(1, 21)]
-    scene_list = ["scene1","scene3"]
+    scene_list = ["scene" + str(i) for i in range(1, 5)]
     session_list = ["session" + str(i) for i in range(1, 6)]
 
     class_list = set()
@@ -474,21 +461,12 @@ def untrimmed_data_example(untrimmed_dir, use_sensors, session_or_subject):
     class_list = list(class_list)
     class_list.sort()
 
-    if session_or_subject == "subject":
-        train_subject_list = subject_list[:-3] #this split was arbitrarily set, update as you see fit
-        test_subject_list = subject_list[-3:]
-        for s in test_subject_list:
-            assert s not in train_subject_list
-        for s in train_subject_list:
-            assert s not in test_subject_list
-
-    elif session_or_subject == "session":
-        train_session_list = ["session1", "session2"] #training sessions from the challenge
-        test_session_list = ["session3"] #val session from the challenge
-        for s in test_session_list:
-            assert s not in train_session_list
-        for s in train_session_list:
-            assert s not in test_session_list
+    train_session_list = ["session1", "session2", "session3"] #training sessions from the challenge
+    test_session_list = ["session4"] #val session from the challenge
+    for s in test_session_list:
+        assert s not in train_session_list
+    for s in train_session_list:
+        assert s not in test_session_list
 
     train_X = []
     train_y = []
@@ -505,9 +483,9 @@ def untrimmed_data_example(untrimmed_dir, use_sensors, session_or_subject):
                 acc_w_df = None
                 acc_s_df = None
                 gyro_df = None
-                orientation_df = None
+                orientation_df = None                
 
-                if "acc_phone" in use_sensors:
+                if "acc_phone" in use_sensors: 
                     acc_s_dir = os.path.join(base_dir, "acc_phone_clip", subject, scene, session)
                     acc_s_files = []
                     if os.path.exists(acc_s_dir):
@@ -522,7 +500,7 @@ def untrimmed_data_example(untrimmed_dir, use_sensors, session_or_subject):
                     else:
                         acc_s_df = acc_s_df / 9.8 #converting values from m/s^2 to g's
 
-                if "acc_watch" in use_sensors:
+                if "acc_watch" in use_sensors: 
                     acc_w_dir = os.path.join(base_dir, "acc_watch_clip", subject, scene, session)
                     acc_w_files = []
                     if os.path.exists(acc_w_dir):
@@ -537,7 +515,7 @@ def untrimmed_data_example(untrimmed_dir, use_sensors, session_or_subject):
                     else:
                         acc_w_df = acc_w_df / 9.8 #converting values from m/s^2 to g's
 
-                if "gyro" in use_sensors:
+                if "gyro" in use_sensors: 
                     gyro_dir = os.path.join(base_dir, "gyro_clip", subject, scene, session)
                     gyro_files = []
                     if os.path.exists(gyro_dir):
@@ -550,7 +528,7 @@ def untrimmed_data_example(untrimmed_dir, use_sensors, session_or_subject):
                         print("Missing gyro data for " + subject + " " + scene + " " + session)
                         continue
 
-                if "orientation" in use_sensors:
+                if "orientation" in use_sensors: 
                     orientation_dir = os.path.join(base_dir, "orientation_clip", subject, scene, session)
                     orientation_files = []
                     if os.path.exists(orientation_dir):
@@ -596,27 +574,15 @@ def untrimmed_data_example(untrimmed_dir, use_sensors, session_or_subject):
 
                 X, y, intervals, _ = create_windowed_data(df=combined_df, sensor_cols=sensor_cols, window_size=window_size, step_size=step_size, variables_first=variables_first, all_windows=all_windows, label_list=label_dict[subject][scene][session], constant_label=None)
 
-                if session_or_subject == "subject":
-                    if subject in train_subject_list:
-                        train_X.extend(X)
-                        train_y.extend(y)
-                        train_intervals.extend(intervals)
+                if session in train_session_list:
+                    train_X.extend(X)
+                    train_y.extend(y)
+                    train_intervals.extend(intervals)
 
-                    elif subject in test_subject_list:
-                        test_X.extend(X)
-                        test_y.extend(y)
-                        test_intervals.extend(intervals)
-
-                elif session_or_subject == "session":
-                    if session in train_session_list:
-                        train_X.extend(X)
-                        train_y.extend(y)
-                        train_intervals.extend(intervals)
-
-                    elif session in test_session_list:
-                        test_X.extend(X)
-                        test_y.extend(y)
-                        test_intervals.extend(intervals)
+                elif session in test_session_list:
+                    test_X.extend(X)
+                    test_y.extend(y)
+                    test_intervals.extend(intervals)
 
     train_val_split = int(0.9*len(train_X))
     temp_train_X = train_X[:train_val_split]
@@ -679,19 +645,19 @@ def untrimmed_data_example(untrimmed_dir, use_sensors, session_or_subject):
     f1 = f1_score(test_y_ints, test_pred_ints, average="macro")
     print(f'macro f-measure: {f1:10.6f}')
 
-    title_text = 'Untrimmed cross ' + session_or_subject + ' example, macro f-measure: ' + str(round(f1, 3))
-    create_confusion_matrix(gt_ints=test_y_ints, pred_ints=test_pred_ints, class_list=vocab, filename="untrimmed_cross_" + session_or_subject + "_example_cm.svg", title_text=title_text, debug_mode=True)
+    title_text = 'Untrimmed cross session example, macro f-measure: ' + str(round(f1, 3))
+    create_confusion_matrix(gt_ints=test_y_ints, pred_ints=test_pred_ints, class_list=vocab, filename="untrimmed_cross_session_example_cm.svg", title_text=title_text, debug_mode=True)
 
 if __name__ == "__main__":
 
-    use_sensors = ["acc_phone", "acc_watch", "gyro",]
+    use_sensors = ["acc_phone", "acc_watch", "gyro",] #["acc_phone", "acc_watch", "gyro", "orientation",]
 
     trimmed_dir = "trimmed"
 
     #Trimmed cross-scene example
-    trimmed_data_example(trimmed_dir=trimmed_dir, use_sensors=use_sensors, scene_or_subject="scene")
-
+    trimmed_data_example(trimmed_dir=trimmed_dir, use_sensors=use_sensors)
+ 
     untrimmed_dir = "untrimmed"
-
+ 
     #Untrimmed cross-session example
-    untrimmed_data_example(untrimmed_dir=untrimmed_dir, use_sensors=use_sensors, session_or_subject="session")
+    untrimmed_data_example(untrimmed_dir=untrimmed_dir, use_sensors=use_sensors)
