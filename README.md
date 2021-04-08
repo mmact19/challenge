@@ -32,7 +32,7 @@ sensor/
 │   │   │   ├── session3
 ...
 ```
-For trimmed data, the annotation will be the file name itself. For untrimmed data, the annotation will be stored under `untrimmed/annotation` folder, the file name of the untrimmed video is the end time stamp. The split of `train` and `val` for each sub-task will be stored in `trimmed/splits` and `untrimmed/splits` respectively.Views in the same session share the same annotation. The folder structure under `untrimmed/annotation` is:
+For trimmed data, the annotation will be the file name itself. For untrimmed data, the annotation will be stored under `untrimmed/annotation` folder, the file name of the untrimmed video is the end time stamp. The split of `train` and `val` for each sub-task will be stored in `trimmed/splits` and `untrimmed/splits` respectively. Camera views with the same session index as `subjectXX/sceneYY/sessionZZ` share the same annotation in `annotation/trainval/subjectXX/sceneYY/sessionZZ/`. The folder structure under `untrimmed/annotation` is:
 ```
 trainval/
 ├── subject1
