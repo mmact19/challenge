@@ -116,8 +116,7 @@ Both of the two splits submission files are the same format as follows,
 }
 ```
 
-For Task2 Temporal Localization with validation set, submission file name is `untrimmed_submission_[team_name]_[submissionID].json`.
-Format example:
+For Task2 Temporal Localization with validation set,the format example is:
 ```
 {
   "results": {
