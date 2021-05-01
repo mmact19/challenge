@@ -90,7 +90,7 @@ python evaluation/eval_mmact_trimmed.py --gt untrimmed_val_gt.json --pred untrim
 
 ### Sample submission
 For Task1 Action Recognition, user needs to submit two results on `cross-view` and `cross-scene`,respectively.
-Submission file name is `cross-view_submission_[team_name]_[submissionID].json` and `cross-scene_submission_[team_name]_[submissionID].json`. `submissionID` is an identificator ID defined by the user themselves.
+Submission file name is `cross-view_submission_[team_name]_[submissionID].json` and `cross-scene_submission_[team_name]_[submissionID].json`. `submissionID` is defined by the users themselves with a specific number.
 Both of the two splits submission files are the same format as follows, 
 ```
 {
