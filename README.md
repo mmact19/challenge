@@ -69,6 +69,80 @@ For the entry of sensor data processing, we provide a complete example to show t
 python utils/time_series_classifiers.py
 ```
 
+### Evaluation
+To evaluate Task1 Action Recognition with validation set, run:
+```
+python evaluation/eval_mmact_trimmed.py --gt ground_truth_file --pred prediction_file
+```
+Eamaple:
+```
+python evaluation/eval_mmact_trimmed.py --gt trimmed_val_view_gt.json  --pred trimmed_val_view_sample_submission.json
+```
+
+To evaluate Task2 Temporal Localization with validation set, run:
+```
+python evaluation/eval_mmact_untrimmed.py --gt ground_truth_file --pred prediction_file
+```
+Eamaple:
+```
+python evaluation/eval_mmact_trimmed.py --gt untrimmed_val_gt.json --pred untrimmed_val_sample_submission.json
+```
+
+### Sample submission
+For Task1 Action Recognition, user needs to submit two results on `cross-view` and `cross-scene`,respectively.
+Submission file name is `cross-view_submission_[team_name]_[submissionID].json` and `cross-scene_submission_[team_name]_[submissionID].json`. `submissionID` is an identificator ID defined by the user themselves.
+Both of the two splits submission files are the same format as follows, 
+```
+{
+  "results": {
+    "nljxzmeshydtlonl": [
+      {
+        "label": "walking", #one prediction per video is required
+        "score": 0.5
+      }
+    ],
+    "hvuapypvzwsjutrf": [
+      {
+        "label": "talking",
+        "score": 0.5
+      }
+    ],
+    "hiukqqolgmtcnisi": [
+      {
+        "label": "throwing",
+        "score": 0.5
+      }
+    ]
+  }
+}
+```
+
+For Task2 Temporal Localization with validation set, submission file name is `untrimmed_submission_[team_name]_[submissionID].json`.
+Format example:
+```
+{
+  "results": {
+    "mynbiqpmzjplsgqe": [{
+        "label": "standing",
+        "score": 0.40685554496254395,
+        "segment": [
+          62.03, #start seconds, 0.0 is the starting time of the given video.
+          66.32  #end seconds
+        ]
+      },
+      {
+        "label": "crouching",
+        "score": 0.5805843080181547,
+        "segment": [
+          70.58,
+          75.12
+        ]
+      }
+    ]
+  }
+}
+```
+
 ### Reference
 Please cite the following paper if you use the code or dataset.
 ```
