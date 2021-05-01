@@ -88,7 +88,7 @@ Eamaple:
 python evaluation/eval_mmact_untrimmed.py --gt untrimmed_val_gt.json --pred untrimmed_val_sample_submission.json
 ```
 
-### Sample submission
+### Submission format
 For Task1 Action Recognition, user needs to submit two results on `cross-view` and `cross-scene`,respectively.
 Both of the two splits submission files are the same format as follows, 
 ```
