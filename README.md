@@ -76,7 +76,7 @@ python evaluation/eval_mmact_trimmed.py --gt ground_truth_file --pred prediction
 ```
 Eamaple:
 ```
-python evaluation/eval_mmact_trimmed.py --gt trimmed_val_view_gt.json  --pred trimmed_val_view_sample_submission.json
+python evaluation/eval_mmact_trimmed.py --gt trimmed_val_view_gt.json --pred trimmed_val_view_sample_submission.json
 ```
 
 To evaluate Task2 Temporal Localization with validation set, run:
@@ -85,7 +85,7 @@ python evaluation/eval_mmact_untrimmed.py --gt ground_truth_file --pred predicti
 ```
 Eamaple:
 ```
-python evaluation/eval_mmact_trimmed.py --gt untrimmed_val_gt.json --pred untrimmed_val_sample_submission.json
+python evaluation/eval_mmact_untrimmed.py --gt untrimmed_val_gt.json --pred untrimmed_val_sample_submission.json
 ```
 
 ### Sample submission
