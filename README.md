@@ -1,7 +1,7 @@
 # MMAct Challenge
 ## <a name="aeol"></a>MMAct Challenge 2021 with ActivityNet @ CVPR'21
 
-The [MMAct Challenge 2021](file:///Users/kong/Project/Dataset/challenge/index.html#downloads) will be hosted in the [CVPR'21 International Challenge on Activity Recognition (ActivityNet) Workshop](http://activity-net.org/challenges/2021/index.html).</a>
+The [MMAct Challenge 2021](https://mmact19.github.io/challenge/) will be hosted in the [CVPR'21 International Challenge on Activity Recognition (ActivityNet) Workshop](http://activity-net.org/challenges/2021/index.html).</a>
 This challenge asks participants to propose cross-modal video action recognition/localization approaches for addressing shortcomings in visual only approaches using [MMAct Dataset](https://mmact19.github.io/2019/).
 
 ### Dataset structure
@@ -69,27 +69,28 @@ For the entry of sensor data processing, we provide a complete example to show t
 python utils/time_series_classifiers.py
 ```
 
-### Evaluation
+### Evaluation for Validation Set
+We provide the ground truth files with json format and evaluation script for validation set of both tasks under `evaluation/`. File name as `evaluation/[file_name]_gt.json` is the ground truth file. 
 To evaluate Task1 Action Recognition with validation set, run:
 ```
-python evaluation/eval_mmact_trimmed.py --gt ground_truth_file --pred prediction_file
+python evaluation/eval_mmact_trimmed.py --gt ground_truth_file --pred your_prediction_file
 ```
-Example run:
+Example run for Task1 cross-view validation with sample format file from `evaluation/trimmed_val_view_format.json`:
 ```
-python evaluation/eval_mmact_trimmed.py --gt trimmed_val_view_gt.json --pred trimmed_val_view_sample_submission.json
+python evaluation/eval_mmact_trimmed.py --gt trimmed_val_view_gt.json --pred trimmed_val_view_sample_format.json
 ```
 
 To evaluate Task2 Temporal Localization with validation set, run:
 ```
 python evaluation/eval_mmact_untrimmed.py --gt ground_truth_file --pred prediction_file
 ```
-Example run:
+Example run for Task2 with the sample format from `evaluation/untrimmed_val_sample_format.json`:
 ```
-python evaluation/eval_mmact_untrimmed.py --gt untrimmed_val_gt.json --pred untrimmed_val_sample_submission.json
+python evaluation/eval_mmact_untrimmed.py --gt untrimmed_val_gt.json --pred untrimmed_val_sample_format.json
 ```
 
-### Submission format
-For Task1 Action Recognition, user needs to submit two results on `cross-view` and `cross-scene`,respectively.
+### Test set Submission format for Leaderboard
+[Leaderboard For Task1 Action Recognition](https://competitions.codalab.org/competitions/31438) recieves test set result for competation. User needs to submit two results on `cross-view` and `cross-scene`,respectively.
 Both of the two splits submission files are the same format as follows, 
 ```
 {
@@ -116,7 +117,7 @@ Both of the two splits submission files are the same format as follows,
 }
 ```
 
-For Task2 Temporal Localization with validation set,the format example is:
+For [Leaderboard For Task2 Temporal Localziation](https://competitions.codalab.org/competitions/31385), the submission format example is:
 ```
 {
   "results": {
