@@ -90,7 +90,7 @@ python evaluation/eval_mmact_untrimmed.py --gt untrimmed_val_gt.json --pred untr
 ```
 
 ### Test set Submission format for Leaderboard
-[Leaderboard For Task1 Action Recognition](https://competitions.codalab.org/competitions/31438) recieves test set result for competation. User needs to submit two results on `cross-view` and `cross-scene`,respectively.
+[Task1 Action Recognition Leaderboard](https://competitions.codalab.org/competitions/31438) recieves result of trimmed action recognition test set for competition. User needs to submit two results on `cross-view` and `cross-scene`,respectively.
 Both of the two splits submission files are the same format as follows, 
 ```
 {
@@ -117,7 +117,7 @@ Both of the two splits submission files are the same format as follows,
 }
 ```
 
-For [Leaderboard For Task2 Temporal Localziation](https://competitions.codalab.org/competitions/31385), the submission format example is:
+[Task2 Temporal Localziation Leaderboard](https://competitions.codalab.org/competitions/31385) recieves result of untrimmed video temporal localization test set for competition, the submission format example is:
 ```
 {
   "results": {
