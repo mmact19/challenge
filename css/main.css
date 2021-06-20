@@ -1097,3 +1097,28 @@ footer {
   overflow: hidden;
   position: relative;
 }
+
+/* ==========================================================================
+Table
+ ========================================================================== */
+table {
+  border-collapse: collapse;
+  color: #333;
+  background-color: #FFF;
+  font-size: 13pt;
+  margin-top: 15px;
+  width:800px;
+}
+
+th {
+  padding: 5px 15px;
+  text-align: center;
+  border: solid 1px #a5d1f1;
+  color: #FFF;
+  background-color: #b22222;
+}
+
+td {
+  padding: 5px 15px;
+  border: solid 1px #a5d1f1;
+}

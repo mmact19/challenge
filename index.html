@@ -115,7 +115,8 @@
             <p>-2021.04.05. Challenge open! Train and Val set released <a class="page-scroll" href="#downloads">here</a>.</p>
           </li>
           <li>
-            <p>-2021.05.01. <a href=https://github.com/mmact19/challenge#evaluation-for-validation-set>Evaluation script</a>, <a href=https://github.com/mmact19/challenge#test-set-submission-format-for-leaderboard>submission format</a> and <a href="https://ent.box.com/s/gz113lr0m33gmkvb9vuw6cs1k9s71nhc">test data</a> (password is the same as trainval request) released!</p>
+            <p>-2021.05.01. <a href=https://github.com/mmact19/challenge#evaluation-for-validation-set>Evaluation script</a>, <a href=https://github.com/mmact19/challenge#test-set-submission-format-for-leaderboard>submission format</a> and <a
+                href="https://ent.box.com/s/gz113lr0m33gmkvb9vuw6cs1k9s71nhc">test data</a> (password is the same as trainval request) released!</p>
           </li>
           <li>
             <p>-2021.05.07. Evaluation server open on CodaLab <a href=https://competitions.codalab.org/competitions/31438>task1 link</a> and <a href=https://competitions.codalab.org/competitions/31385>task2 link</a>.</p>
@@ -127,7 +128,7 @@
             <p>-2021.06.14. Deadline for submitting the report.</p>
           </li>
           <li>
-            <p>-2021.06.19. Workshop day at CVPR 2021.</p>
+            <p>-2021.06.19. Workshop day at CVPR 2021. Check <a href="http://activity-net.org/challenges/2021/program.html">programe</a> and <a href="#result">Results</a></p>
           </li>
         </ul>
       </div>
@@ -258,8 +259,8 @@
         <div>
           <p style="text-align:left">In this task, participants will use trimmed videos from MMAct along with paired sensor data.
             This task allows the participants to train with trimmed sensor data and trimmed video, but test on only trimmed video for action recognition.
-            It requries the user to submit two results according to the follows two different splits. External datasets for pre-training are allowed as long as clearly stated in the report. 
-            Submissions that use only the vision-based modality in the train phase are also welcome! 
+            It requries the user to submit two results according to the follows two different splits. External datasets for pre-training are allowed as long as clearly stated in the report.
+            Submissions that use only the vision-based modality in the train phase are also welcome!
             To encourage the submissions contributed on cross-modal methods, there will be a special award selected from the participants who use cross-modal manner.
           </p>
         </div>
@@ -302,7 +303,7 @@
       <div class="row">
         <p style="text-align:left">In this task, participants will use untrimmed paired sensor data and video for training,
           then test on only untrimmed videos for temporal action localization with the output being the recognized action class and its start and end time in the untrimmed video.
-          External datasets for pre-training are allowed as long as clearly stated in the report. Submissions that use only the vision-based modality in the train phase are also welcome! 
+          External datasets for pre-training are allowed as long as clearly stated in the report. Submissions that use only the vision-based modality in the train phase are also welcome!
           To encourage the submissions contributed on cross-modal methods, there will be a special award selected from the participants who use cross-modal manner.
           <i>Notice that Keypoints are NOT provided in this task.</i>
         </p>
@@ -323,11 +324,89 @@
       </div>
 
     </div>
-
-
     <!-- Container Ends -->
   </section>
   <!-- Task Section Ends -->
+  <!-- News Section Start -->
+  <section id="result" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Results</h2>
+        <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+        <div align="center">
+          <table>
+            <thead>
+              <tr>
+                <th colspan="6">TASK1: Cross-Modal Trimmed Action Recognition</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td><b>Organization</b></td>
+                <td><b>x-scene AP</b></td>
+                <td><b>x-view AP</b></td>
+                <td><b>mAP</b></td>
+                <td><b>Report</b></td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>DeepBlue Technology</td>
+                <td>0.9716</td>
+                <td>0.9449</td>
+                <td>0.9583</td>
+                <td><a href="assets/report/DeepblueAI-Challenge report for MMAct Challenge.pdf">PDF</a></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>OPPO Research Institute</td>
+                <td>0.9468</td>
+                <td>0.9108</td>
+                <td>0.9288</td>
+                <td><a href="assets/report/OPPO_mmact_challenge_report.pdf">PDF</a></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>University of Koblenz</td>
+                <td>0.8064</td>
+                <td>0.6748</td>
+                <td>0.7406</td>
+                <td><a href="assets/report/Raphael_unified_action_recognition_with_various_modalities.pdf">PDF</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div align="center">
+          <table>
+            <thead>
+              <tr>
+                <th colspan="4">TASK2: Cross-Modal Untrimmed Action Detection</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>Organization</b></td>
+                <td><b>AP</b></td>
+                <td><b>Report</b></td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>DeepBlue Technology</td>
+                <td>0.4457</td>
+                <td><a href="assets/report/DeepblueAI-Challenge report for MMAct Challenge.pdf">PDF</a></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>OPPO Research Institute</td>
+                <td>0.4068</td>
+                <td><a href="assets/report/OPPO_mmact_challenge_report.pdf">PDF</a></td>
+              </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Downloads Section Start -->
   <section id="downloads" class="section">
@@ -374,8 +453,9 @@
             <hr class="lines">
           </div>
 
-          <p>For Task1 submission format (cross-view and cross-scene are the same) and Task2 submission format, please refer it here: <a href="https://github.com/mmact19/challenge/blob/main/README.md#test-set-submission-format-for-leaderboard">Test set Submission format for Leaderboard</a></p>
-          
+          <p>For Task1 submission format (cross-view and cross-scene are the same) and Task2 submission format, please refer it here: <a href="https://github.com/mmact19/challenge/blob/main/README.md#test-set-submission-format-for-leaderboard">Test
+              set Submission format for Leaderboard</a></p>
+
         </div>
       </div>
     </div>
